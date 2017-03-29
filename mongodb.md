@@ -36,8 +36,7 @@ MongoDB는 일련번호를 생성하는 기능을 제공하지는 않습니다. 
 > db.sequences.findAndModify({
     query: { _id: "urlShortener" },
     update: { $inc: { seq: 1 } },
-
-upsert: true
+    upsert: true
   })
 ```
 
@@ -52,7 +51,7 @@ upsert 가 true 인 경우 조회조건에 맞는 document 가 없을 때 새로
 
 findAndModify함수에 대한 자세한 설명은 MongoDB Document 를 참조한다.
 
-\([http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\](http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\)\)
+\([http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\](http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/%29\)
 
 ### URL 저장 Collection
 
