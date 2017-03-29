@@ -1,10 +1,8 @@
-MongoDB
-
-
+# MongoDB 에 데이터 관리하기
 
 ### MongoDB 의 특징
 
-MongoDB는 필드Key와 값 를 갖는 JSON\(JavaScript Object Notation\)형태로 데이터를 저장한다. 이것을 BSON\(binary and JSON Document\) 라고 한다.
+MongoDB는 필드Key와 값 를 갖는 JSON\(JavaScript Object Notation\)형태로 데이터를 저장한다. 이것을 BSON\(binary and JSON Document\) 라고 한다.
 
 ![](https://lh6.googleusercontent.com/rtSnNzYJvrpUYKtcbEZwlrlIQSIpOfPvwIMHh-o-RInXi1Ml-s0d_hlrY9laTM8dgBn6Q0t7f_ikEFbVbAvqnNc4Kp9LjvWZJNJ-mvzboU8VzfMoJtduCnoBWsAcBYVOfMwmIfgFhUhrCtTi)
 
@@ -24,13 +22,9 @@ MongoDB의 Query는 SQL 과 전혀 다르며, Script 언어와 비슷하게 작�
 
 insert와 update 도 마찬가지이며, 아래 예제를 참고할 수 있겠습니다.
 
-
-
 ![](https://lh6.googleusercontent.com/ogEM-_ccsINKrRCcBeqH1Zjg6GxI8YQ57GJoZyW8hqcUZrozQHu9t-qe0iIMYNEH3Ku9MgdSGGpY0bUg8MwdP5JnLBEgJAtEevxbJnLQH_31abfotffjlNDTU3OxkItRP2jkte02ia2fGCKS)
 
 그리고, MongoDB는 미리 Collection을 생성해둘 필요가 없으며, Document를 처음 insert할 때 Collection도 신규 생성되게 됩니다.
-
-
 
 ### 일련번호 Collection
 
@@ -42,23 +36,23 @@ MongoDB는 일련번호를 생성하는 기능을 제공하지는 않습니다. 
 > db.sequences.findAndModify({
     query: { _id: "urlShortener" },
     update: { $inc: { seq: 1 } },
-    upsert: true
+
+upsert: true
   })
 ```
 
-findAndModify 는 조회조건에 맞는 document 를 찾아서 수정해 주는 기능을 제공합니다. 그리고 실행 결과로 조회조건으로 찾은 Document 를 반환합니다. 
+findAndModify 는 조회조건에 맞는 document 를 찾아서 수정해 주는 기능을 제공합니다. 그리고 실행 결과로 조회조건으로 찾은 Document 를 반환합니다.
 
-작성된 쿼리를 보면, ‘\_id’ 필드가 ‘urlShortener’ 인 Document를 찾고, 이 Document의 ‘seq’ 필드 값에 1을 증가시켜 다시 저장합니다. 그리고, 그 결과 Document를 반환할 것입니다. 
+작성된 쿼리를 보면, ‘\_id’ 필드가 ‘urlShortener’ 인 Document를 찾고, 이 Document의 ‘seq’ 필드 값에 1을 증가시켜 다시 저장합니다. 그리고, 그 결과 Document를 반환할 것입니다.
 
-upsert 가 true 인 경우 조회조건에 맞는 document 가 없을 때 새로운 Document를 생성할 것입니다.   
-가장 처음 실행될 경우, {‘\_id’: ‘urlShortener’, ‘seq’: 1} 의 Document가 ‘sequences’ Collection 에 생성 될 것입니다. 
+upsert 가 true 인 경우 조회조건에 맞는 document 가 없을 때 새로운 Document를 생성할 것입니다.  
+가장 처음 실행될 경우, {‘\_id’: ‘urlShortener’, ‘seq’: 1} 의 Document가 ‘sequences’ Collection 에 생성 될 것입니다.
 
-위의 명령을 직접 MongoDB 에서 실행해보고, ‘seq’ 필드 값이 1씩 증가되는지 직접 확인해 봅시다. 
+위의 명령을 직접 MongoDB 에서 실행해보고, ‘seq’ 필드 값이 1씩 증가되는지 직접 확인해 봅시다.
 
-findAndModify함수에 대한 자세한 설명은 MongoDB Document 를 참조한다.  
-\(http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\)
+findAndModify함수에 대한 자세한 설명은 MongoDB Document 를 참조한다.
 
-
+\([http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\](http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\)\)
 
 ### URL 저장 Collection
 
@@ -69,13 +63,13 @@ URL Shortener는 앞장의  '필요한 기능'에서 설명한대로, 앞에서 
 insert 메소드를 사용하여 ‘urls’ Collection 에 코드 값과 URL로 구성된 Document를 신규 저장하는 예제는 다음과 같습니다.
 
 ```js
-> db.urls.insert( { _id: "A1", url: "http://long.url.example.com/abcdefg" } )
+> db.urls.insert( { _id: "A1", url: "http://long.url.example.com/abcdefg" } )
 ```
 
-그리고, 코드 값으로 원래 URL을 가지고 있는 Document를 조회해 오는 예제는 다음과 같습니다. 
+그리고, 코드 값으로 원래 URL을 가지고 있는 Document를 조회해 오는 예제는 다음과 같습니다.
 
 ```js
-> db.urls.findOne({ _id: "A1"});
+> db.urls.findOne({ _id: "A1"});
 ```
 
 
