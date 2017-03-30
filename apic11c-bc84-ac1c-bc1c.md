@@ -1,8 +1,6 @@
 # API 서버 개발
 
-
-
-### MongoDB Schema 
+### MongoDB Schema
 
 MongoDB 에 접속하고 명령어를 실행하기 위하여 MongoDB 용 모듈중 하나인 mongoose 를 설치 합니다.
 
@@ -51,8 +49,6 @@ mongoose 모듈은 mongoDB의 findAndModify 이름의 함수 대신에, 용도�
 
 자세한 설명은 [http://mongoosejs.com/docs/api.html\#query\_Query-findOneAndUpdate](https://www.gitbook.com/book/john-kim/training-nodejs-2/edit#) 를 참조합니다.
 
-
-
 ### Bijective 유틸
 
 `bijective.js` 파일을 아래와 같이 작성합니다.
@@ -85,8 +81,6 @@ function decode(str){
 module.exports.encode = encode;
 module.exports.decode = decode;
 ```
-
-
 
 ### 서버 코드
 
