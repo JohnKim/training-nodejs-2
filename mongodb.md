@@ -2,11 +2,11 @@
 
 ### MongoDB 의 특징
 
-MongoDB는 필드Key와 값 를 갖는 JSON\(JavaScript Object Notation\)형태로 데이터를 저장한다. 이것을 BSON\(binary and JSON Document\) 라고 한다.
+MongoDB는 필드Key와 값 를 갖는 JSON\(JavaScript Object Notation\)형태로 데이터를 저장합니다. MongoDB에서는 바이너리 파일도 함께 저장이 가능하며, 이것을 BSON\(binary and JSON Document\) 라고 합니다.
 
 ![](https://lh6.googleusercontent.com/rtSnNzYJvrpUYKtcbEZwlrlIQSIpOfPvwIMHh-o-RInXi1Ml-s0d_hlrY9laTM8dgBn6Q0t7f_ikEFbVbAvqnNc4Kp9LjvWZJNJ-mvzboU8VzfMoJtduCnoBWsAcBYVOfMwmIfgFhUhrCtTi)
 
-그리고, 모든 Document들을 Collection에 저장된다. Collection은 Document들의 그룹이며, Document의 필드 별로 인덱스Index를 생성할 수 있는 구조로 되어 있습니다.
+그리고, 모든 Document들을 Collection에 저장됩니다. Collection은 Document들의 그룹이며, Document의 필드 별로 인덱스Index를 생성할 수 있는 구조로 되어 있습니다.
 
 MongoDB의 모든 Document에는 `_id` 라는 특수한 타입의 필드가 존재하며, 중복되지 않는 유일한 값이 저장됩니다. `_id` 필드는 항상 인덱싱\(indexing\)되며, Document 생성시 명시 하지 않으면 자동으로 12byte 값으로 만들어지고, 필요에 따라서는 명시적으로 값을 부여하여 생성할 수도 있습니다.
 
@@ -49,9 +49,9 @@ upsert 가 true 인 경우 조회조건에 맞는 document 가 없을 때 새로
 
 위의 명령을 직접 MongoDB 에서 실행해보고, ‘seq’ 필드 값이 1씩 증가되는지 직접 확인해 봅시다.
 
-findAndModify함수에 대한 자세한 설명은 MongoDB Document 를 참조한다.
+findAndModify함수에 대한 자세한 설명은 MongoDB Document 를 참조합니다.
 
-\([http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/\](http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify/%29\)
+\(http://docs.mongodb.org/manual/reference/method/db.collection.findAndModify\)
 
 ### URL 저장 Collection
 
