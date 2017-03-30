@@ -43,7 +43,7 @@ function decode(str){
 }
 ```
 
-위의 JavaScript 를 실행하고 아래와 같이 테스트 해 봅니다.
+위의 JavaScript 를 실행하고 아래와 같이 테스트 해 봅니다. \(Chrome 브라우져의 'Inspect' 의 console 탭에서 실행 테스트 해볼 수 있습니다.\)
 
 ```
 > encode(2147483647);

@@ -2,7 +2,7 @@
 
 
 
-### MongoDB Schema 정의
+### MongoDB Schema 
 
 MongoDB 에 접속하고 명령어를 실행하기 위하여 MongoDB 용 모듈중 하나인 mongoose 를 설치 합니다.
 
@@ -10,9 +10,9 @@ MongoDB 에 접속하고 명령어를 실행하기 위하여 MongoDB 용 모듈�
 $ npm install --save mongoose
 ```
 
-이제 mongoose 모듈을 사용하여 MongoDB 의 document 인 `sequences` 와 `urls` 의 스키마 정의를 합니다. 
+이제 mongoose 모듈을 사용하여 MongoDB 의 document 인 `sequences` 와 `urls` 의 스키마 정의를 합니다.
 
-models.js 파일을 아래와 같이 작성합니다.
+`models.js` 파일을 아래와 같이 작성합니다.
 
 ```js
 var mongoose = require('mongoose');
@@ -55,6 +55,8 @@ mongoose 모듈은 mongoDB의 findAndModify 이름의 함수 대신에, 용도�
 
 ### Bijective 유틸
 
+`bijective.js` 파일을 아래와 같이 작성합니다.
+
 ```js
 var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 var base = alphabet.length;
@@ -87,6 +89,8 @@ module.exports.decode = decode;
 
 
 ### 서버 코드
+
+최종 완성된 `server.js` 파일은 아래와 같습니다.
 
 ```js
 var express = require('express');
@@ -141,6 +145,12 @@ app.get('/:key', function(req, res){
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
+```
+
+이제 실행해 보면서 동작 여부를 확인 합니다.
+
+```
+$ node server.js
 ```
 
 
