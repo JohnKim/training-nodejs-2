@@ -1,4 +1,4 @@
-# &lt;2주&gt; Node.js 실습 - 프로젝트 개발
+# &lt;4주&gt; Node.js 실습 - 프로젝트 개발
 
 강의 일시 : 2017.03.31\(금\) 오전 9시 ~ 12시
 
@@ -11,12 +11,12 @@ Node.js 는 2주에 걸처 실습이 진행되며, 저번주 Express 기반의 �
 1. **Git, Github 계정, Editor \(Atom\)**  
    이전 실습에서 이미 설치하였습니다.
 
-2. **Node.js 설치  
+2. **Node.js 설치    
    **이전 실습에서 이미 설치하였습니다.
 
 3. **MongoDB 설치**  
-   Node.js 는 다양한 OS 환경에서 Installer, Package Manager 또는 소스파일을 직접 다운로드 받아 컴파일하는 방식으로 설치가 가능합니다.  
-  
+   Node.js 는 다양한 OS 환경에서 Installer, Package Manager 또는 소스파일을 직접 다운로드 받아 컴파일하는 방식으로 설치가 가능합니다.
+
    **설치 URL : **[https://docs.mongodb.com/manual/installation](https://docs.mongodb.com/manual/installation)
 
    MongoDB Community Edition 를 본인의 OS 환경에 따라 설치하시면 됩니다.
