@@ -11,7 +11,7 @@ Node.js 는 2주간에 걸처 실습이 진행되며, 저번 주 Express 기반�
 1. **Git, Github 계정, Editor \(Atom\)**  
    이전 실습에서 이미 설치하였습니다.
 
-2. **Node.js 설치        
+2. **Node.js 설치          
    **이전 실습에서 이미 설치하였습니다.
 
 3. **MongoDB 설치**  
