@@ -103,7 +103,7 @@ app.get('/url/:longUrl', function(req, res){
 
   Urls.findOne({url: req.params.longUrl}, function (err, doc){
     if (doc){
-      res.send({'key': doc._id});
+      res.send({'key': bijective.encode(doc._id)});
     } else {
 
       var newUrl = Urls({
@@ -139,6 +139,7 @@ app.get('/:key', function(req, res){
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
+
 ```
 
 이제 실행해 보면서 동작 여부를 확인 합니다.
