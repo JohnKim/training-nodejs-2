@@ -137,9 +137,8 @@ app.get('/:key', function(req, res){
 
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('URL Shortener Server listening on port 3000!')
 });
-
 ```
 
 이제 실행해 보면서 동작 여부를 확인 합니다.
