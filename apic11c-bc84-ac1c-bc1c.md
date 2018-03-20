@@ -64,6 +64,7 @@ var base = alphabet.length;
 
 function encode(num){
   var encoded = '';
+  if(num==0) return alphabet[num];
   while (num){
     var remainder = num % base;
     num = Math.floor(num / base);
@@ -85,6 +86,7 @@ function decode(str){
 
 module.exports.encode = encode;
 module.exports.decode = decode;
+
 ```
 
 ### 서버 코드
