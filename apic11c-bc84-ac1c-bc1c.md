@@ -13,34 +13,39 @@ $ npm install --save mongoose
 `models.js` 파일을 아래와 같이 작성합니다.
 
 ```js
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var SequencesSchema = Schema({
-    _id: { type: String, required: true },
-    seq: { type: Number, default: 0 }
+  _id: { type: String, required: true },
+  seq: { type: Number, default: 0 }
 });
 
-var sequences = mongoose.model('sequences', SequencesSchema);
+var sequences = mongoose.model("sequences", SequencesSchema);
 
 var UrlsSchema = new Schema({
-  _id: {type: Number, index: true},
+  _id: { type: Number },
   url: String,
   created_at: Date
 });
 
-UrlsSchema.pre('save', function(next){
+UrlsSchema.pre("save", function(next) {
   var self = this;
-  sequences.findOneAndUpdate({_id: 'url_count'}, {$inc: {seq: 1} }, {upsert: true}, function(error, result) {
-    console.log(result);
-    if (error) return next(error);
-    self.created_at = new Date();
-    self._id = result.seq;
-    next();
-  });
+  sequences.findOneAndUpdate(
+    { _id: "url_count" },
+    { $inc: { seq: 1 } },
+    { upsert: true },
+    function(error, result) {
+      console.log(result);
+      if (error) return next(error);
+      self.created_at = new Date();
+      self._id = result.seq;
+      next();
+    }
+  );
 });
 
-var urls = mongoose.model('urls', UrlsSchema);
+var urls = mongoose.model("urls", UrlsSchema);
 
 module.exports = urls;
 ```
